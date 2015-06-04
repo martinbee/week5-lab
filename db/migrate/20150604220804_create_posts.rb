@@ -7,5 +7,6 @@ class CreatePosts < ActiveRecord::Migration
 
       t.timestamps null: false
     end
+    change_column :posts, :votes, :integer, :default => 0
   end
 end

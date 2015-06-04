@@ -7,7 +7,7 @@
     <li>
       <%= link_to post.title, [:post, id: post.id] %>
       <%= truncate(post.link) %>
-      <%= post.votes %>
+      Votes: <%= post.votes %>
       <%= link_to "Edit", [:edit_post, id: post.id] %>
       <%= link_to "Delete", [:post, id: post.id], method: 'delete', data: {confirm: 'Are you fed up with this post?'} %>
     </li>
