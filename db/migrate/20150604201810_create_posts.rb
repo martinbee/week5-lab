@@ -3,7 +3,7 @@ class CreatePosts < ActiveRecord::Migration
     create_table :posts do |t|
       t.string :title
       t.string :link
-      t.string :votes
+      t.integer :votes
 
       t.timestamps null: false
     end

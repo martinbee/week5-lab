@@ -3,9 +3,9 @@
 one:
   title: MyString
   link: MyString
-  votes: MyString
+  votes: 1
 
 two:
   title: MyString
   link: MyString
-  votes: MyString
+  votes: 1

@@ -1,2 +1,13 @@
-<h1>Posts#index</h1>
-<p>Find me in app/views/posts/index.html.erb</p>
+<h1>Welcome to Feddit!</h1>
+<h4>The hippest place to see who's feeding what and what who is!</h4>
+<h5>Posts:</h5>
+<%= link_to "Add Post", :new_post %>
+<ul>
+  <% @posts.each do |post| %>
+    <li>
+      <%= post.title %>
+      <%= post.link %>
+      <%= post.votes %>
+    </li>
+  <% end %>
+</ul>
