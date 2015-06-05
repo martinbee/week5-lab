@@ -10,7 +10,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new params.require(:post).permit(:title, :link)
+    @post = Post.new params.require(:post).permit(:title, :link, :user)
     if @post.save
       redirect_to root_path
     else
@@ -42,6 +42,12 @@ class PostsController < ApplicationController
     @post = Post.find params[:id]
     @post.destroy
     redirect_to :root
+  end
+
+  def upvote
+  end
+
+  def downvote
   end
 
 end

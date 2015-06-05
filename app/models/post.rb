@@ -1,6 +1,8 @@
 class Post < ActiveRecord::Base
 
-  validates :title, presence: true
-  validates :link, presence: true
+  belongs_to :user
+
+  validates :title, length: { maximum: 500 }, presence: true, uniqueness: {scope: :user}
+  validates :link, presence: true,  uniqueness: {scope: :user}
 
 end
