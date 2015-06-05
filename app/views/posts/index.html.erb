@@ -5,6 +5,8 @@
 <ul>
   <% @posts.each do |post| %>
     <li>
+      <%= link_to "up", [:upvote, id: post.id] %>
+      <%= link_to "down", [:downvote, id: post.id] %>
       <%= link_to post.title, [:post, id: post.id] %>
       <%= truncate(post.link) %>
       Votes: <%= post.votes %>

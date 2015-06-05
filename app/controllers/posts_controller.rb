@@ -20,8 +20,6 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find params[:id]
-    @post.votes += 1
-    @post.save
     redirect_to @post.link
   end
 
@@ -45,9 +43,17 @@ class PostsController < ApplicationController
   end
 
   def upvote
+    @post = Post.find params[:id]
+    @post.votes += 1
+    @post.save
+    redirect_to :root
   end
 
   def downvote
+    @post = Post.find params[:id]
+    @post.votes -= 1
+    @post.save
+    redirect_to :root
   end
 
 end
