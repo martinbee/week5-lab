@@ -1,23 +1,20 @@
 <%= form_for @post do |f| %>
-  <div>
-    <%= f.label :title %>
-    <%= f.text_field :title %>
+  <div class="form-group">
+    <%= f.text_field :title, :placeholder=> "Post Title", class: "form-control" %>
   </div>
 
-  <div>
-    <%= f.label :link %>
-    <%= f.text_field :link %>
+  <div class="form-group">
+    <%= f.text_field :link, :placeholder=> "Link Url", class: "form-control"  %>
   </div>
 
-  <div>
-    <%= f.label :user %>
-    <%= f.collection_select :user_id, User.all, :id, :name %>
+  <div class="form-group">
+    <%= f.collection_select :user_id, User.all, :id, :name,{prompt: "Select Username"}, class: "form-control select" %>
   </div>
 
   <div>
     <%= f.submit class: "btn btn-primary" %>
   </div>
 
-  <%end%>
+  <%= link_to (image_tag "Home.png", width: 35, height: 35, class: "home"), :root%>
 
-  <%= link_to "Back", :root %>
+  <%end%>

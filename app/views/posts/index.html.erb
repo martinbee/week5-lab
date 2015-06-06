@@ -1,17 +1,27 @@
-<h1>Welcome to Feddit!</h1>
-<h4>The hippest place to see who's feeding what and what who is!</h4>
-<h5>Posts:</h5>
-<%= link_to "Add Post", :new_post %>
-<ul>
-  <% @posts.each do |post| %>
-    <li>
-      <%= link_to "up", [:upvote, id: post.id] %>
-      <%= link_to "down", [:downvote, id: post.id] %>
-      <%= link_to post.title, [:post, id: post.id] %>
-      <%= truncate(post.link) %>
-      Votes: <%= post.votes %>
-      <%= link_to "Edit", [:edit_post, id: post.id] %>
-      <%= link_to "Delete", [:post, id: post.id], method: 'delete', data: {confirm: 'Are you fed up with this post?'} %>
-    </li>
-  <% end %>
-</ul>
+<div class="wrapper-list">
+  <h1 class="page-header"> Feddit </h1>
+  <h4>The hippest place to see who's feeding what and what who is!</h4>
+  <%= link_to (image_tag ("Plus.png"), width: 35, height:35), :new_post, class: "add-post-symbol" %>
+</div>
+<div class="container posts">
+  <ol>
+    <% @posts.each do |post| %>
+      <li>
+        <div class="votes">
+          <%= link_to (image_tag ("Fork.png"), width: 8, height:35), [:upvote, id: post.id] %>
+          <%= post.votes %>
+          <%= link_to (image_tag ("DownFork.png"), width: 8, height:35), [:downvote, id: post.id] %>
+        </div>
+        <div class="post-content">
+          <%= link_to post.title, [:post, id: post.id], class: "post-title" %>
+          <span class="post-url">(<%= truncate(post.link, length: 35) %>)</span>
+          <br>
+          <%= post.user[:name]%>
+          <br>
+          <%= link_to "Edit", [:edit_post, id: post.id] %>
+          <%= link_to "Delete", [:post, id: post.id], method: 'delete', data: {confirm: 'Are you fed up with this post?'} %>
+        </div>
+      </li>
+    <% end %>
+  </ol>
+</div>

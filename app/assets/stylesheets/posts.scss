@@ -1,3 +1,74 @@
 // Place all the styles related to the posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+li {
+  margin-top: 10px;
+}
+
+
+
+.wrapper-form, .wrapper-list {
+  display:flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  text-align: center;
+
+  .page-header {
+    border-bottom: none !important;
+    flex: 1 100%;
+    text-align: center;
+  }
+  .add-post-symbol {
+    flex: 1 100%;
+  }
+  .btn-primary {
+    color: #FFF;
+    background-color: #E74C3C;
+    border-color: #E74C3C;
+   }
+   .home {
+     margin-top: 1.6em;
+   }
+}
+
+.container {
+  width: 80%;
+}
+
+.posts {
+  font-size: 1em;
+  .votes {
+    display: inline;
+  }
+  .post-content {
+    .post-title {
+      font-size: 1.4em;
+    }
+  }
+}
+
+.field_with_errors {
+  float:left;
+
+}
+
+.new_post, .edit_post {
+    width: 60%;
+    .select {
+      text-align: center;
+      width: 20%;
+      margin: auto;
+    }
+  }
+
+@media all and (max-width: 500px) {
+
+  .container {
+    width: 100%;
+    .post-url {
+      display:none;
+    }
+  }
+
+}
