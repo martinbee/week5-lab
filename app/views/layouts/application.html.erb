@@ -9,6 +9,12 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <% if notice %>
+    <div class="container notice">
+      <span class="hide-notice"><%= notice %></span>
+    </div>
+  <% end %>
+
 
 <%= yield %>
 

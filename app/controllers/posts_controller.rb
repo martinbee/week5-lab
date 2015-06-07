@@ -11,7 +11,7 @@ class PostsController < ApplicationController
   def create
     @post = Post.new params.require(:post).permit(:title, :link, :user_id)
     if @post.save
-      redirect_to root_path
+      redirect_to :root, notice: "Post Added!"
     else
       render :new
     end
@@ -29,7 +29,7 @@ class PostsController < ApplicationController
   def update
     @post = Post.find params[:id]
     if @post.update params.require(:post).permit(:title, :link, :user_id)
-      redirect_to :root
+      redirect_to :root, notice: "Post Updated!"
     else
       render :edit
     end
@@ -38,7 +38,7 @@ class PostsController < ApplicationController
   def delete
     @post = Post.find params[:id]
     @post.destroy
-    redirect_to :root
+    redirect_to :root, notice: "Post Updated!"
   end
 
   def upvote
