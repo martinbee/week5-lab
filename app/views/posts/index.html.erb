@@ -22,7 +22,7 @@
           <%= post.user[:name]%>
           <br>
           <%= link_to "Edit", [:edit_post, id: post.id], class: "edit-link" %>
-          <%= link_to "Delete", [:post, id: post.id], method: 'delete', data: {confirm: 'Are you fed up with this post?'} %>
+          <%= link_to "Delete", [:post, id: post.id], method: 'delete', data: {confirm: 'Are you fed up with this post?'}, class: "delete-link" %>
         </div>
       </li>
       <div class="post-separation">
