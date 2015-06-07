@@ -1,7 +1,10 @@
-<div class="wrapper-list">
+
+
+<div class="wrapper-list container">
   <h1 class="page-header"> Feddit </h1>
-  <h4>The hippest place to see who's feeding what and what who is!</h4>
-  <%= link_to (image_tag ("Plus.png"), width: 35, height:35), :new_post, class: "add-post-symbol" %>
+  <div class= "add-post-symbol">
+    <%= link_to "New Post", :new_post, class:"btn btn-primary new" %>
+  </div>
 </div>
 <div class="container posts">
   <ol>
@@ -18,10 +21,12 @@
           <br>
           <%= post.user[:name]%>
           <br>
-          <%= link_to "Edit", [:edit_post, id: post.id] %>
+          <%= link_to "Edit", [:edit_post, id: post.id], class: "edit-link" %>
           <%= link_to "Delete", [:post, id: post.id], method: 'delete', data: {confirm: 'Are you fed up with this post?'} %>
         </div>
       </li>
+      <div class="post-separation">
+      </div>
     <% end %>
   </ol>
 </div>
